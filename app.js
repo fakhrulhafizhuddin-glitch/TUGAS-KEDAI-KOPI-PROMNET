@@ -69,30 +69,51 @@ if (inputNama) {
 // Catatan: Gunakan bilangan bulat (integer murni tanpa desimal/float).
 
 // TODO 3:
-// 1. Buat 3 variabel poin transaksi: "poinKopi", "poinMakanan", dan "poinMerchandise"
-//    (isi dengan angka bulat bebas, misal: 45, 35, 20).
-// 2. Buat variabel "totalPoin" yang menjumlahkan ketiga variabel poin di atas.
-// 3. Cetak rincian perolehan poin dan totalPoin ke Console menggunakan console.log().
+let poinKopi = 45;
+let poinMakanan = 35;
+let poinMerchandise = 20;
 
+// Perbaikan: Menambahkan rumus penjumlahannya agar tidak ReferenceError
+let totalPoin = poinKopi + poinMakanan + poinMerchandise;
 
-
+console.log(`=== RINCIAN POIN: ${namaPelanggan} ===`);
+console.log(`Poin Kopi        : ${poinKopi}`);
+console.log(`Poin Makanan     : ${poinMakanan}`);
+console.log(`Poin Merchandise : ${poinMerchandise}`);
+console.log(`Total Poin       : ${totalPoin}`);
+console.log("-------------------------------------\n");
 
 // ============================================================
 // AKTIVITAS 4: Percabangan if-else — Penentuan Tier Membership
 // ============================================================
 
 // TODO 4:
-// 1. Buat variabel "tierMember" dan "benefit" bertipe string kosong ("").
-// 2. Gunakan percabangan "if - else if - else" berdasarkan nilai "totalPoin":
-//    - totalPoin >= 100 : tierMember = "Platinum", benefit = "Diskon 20% + Gratis 1 Minuman Signature"
-//    - totalPoin >= 70  : tierMember = "Gold", benefit = "Diskon 10% di setiap transaksi"
-//    - totalPoin >= 40  : tierMember = "Silver", benefit = "Diskon 5% untuk menu minuman"
-//    - selain itu       : tierMember = "Bronze", benefit = "Member Reguler (kumpulkan poin untuk naik tier)"
-// 3. Cetak hasil tierMember dan benefit ke Console.
-// 4. Tampilkan ringkasan hasil member (nama, total poin, tier, benefit) via dialog alert().
+let tierMember = "";
+let benefit = "";
 
+// 2. Gunakan percabangan if - else if - else
+if (totalPoin >= 100) {
+    tierMember = "Platinum";
+    benefit = "Diskon 20% + Gratis 1 Minuman Signature";
+} else if (totalPoin >= 70) {
+    tierMember = "Gold";
+    benefit = "Diskon 10% di setiap transaksi";
+} else if (totalPoin >= 40) {
+    tierMember = "Silver";
+    benefit = "Diskon 5% untuk menu minuman";
+} else {
+    tierMember = "Bronze";
+    benefit = "Member Reguler (kumpulkan poin untuk naik tier)";
+}
 
+// 3. Cetak hasil ke Console
+console.log("=== STATUS KEANGGOTAAN ===");
+console.log(`Status / Tier  : ${tierMember}`);
+console.log(`Benefit Reward : ${benefit}`);
+console.log("-------------------------------------\n");
 
+// 4. Tampilkan ringkasan via dialog alert()
+alert(`Ringkasan Member:\nNama: ${namaPelanggan}\nTotal Poin: ${totalPoin}\nTier: ${tierMember}\nBenefit: ${benefit}`);
 
 // ============================================================
 // AKTIVITAS 5: Function — Membuat Fungsi yang Bisa Dipakai Ulang
