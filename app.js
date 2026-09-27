@@ -33,31 +33,35 @@ console.log("Skrip app.js berhasil terhubung!");
 
 // ---- BAGIAN 2A: VARIABEL IDENTITAS KEDAI KOPI ----
 // TODO 2A:
-// 1. Buat konstanta "NAMA_KEDAI" bertipe string (misal: "Kopi PSTI Kampus").
-// 2. Buat variabel "namaKasir" (misal: "Kak Eko") dan "shiftKerja" menggunakan "let".
-// 3. Cetak nilai NAMA_KEDAI, namaKasir, dan shiftKerja ke Console menggunakan console.log().
+const NAMA_KEDAI = "Kopi Kang Fakhrul";
+let namaKasir = "Kang Fakhrul";
+let shiftKerja = "Siang"; // Menambahkan variabel yang terlewat di kodemu
 
-
-
+console.log(`Nama Kedai: ${NAMA_KEDAI}`);
+console.log(`Kasir Awal: ${namaKasir}`);
+console.log(`Shift Kerja: ${shiftKerja}`);
 
 // ---- DEMO PERBEDAAN LET vs CONST ----
 // TODO 2B:
-// Ubah (re-assign) nilai variabel "namaKasir" dengan nama kasir lain,
-// lalu cetak ke Console untuk membuktikan bahwa variabel "let" nilainya dapat diubah.
-
-
-
+namaKasir = "Fakhrul Hafizh";
+console.log(`Kasir Berubah Menjadi: ${namaKasir}`);
 
 // ---- BAGIAN 2B: INPUT INTERAKTIF & PENGANDAIAN DASAR ----
 // TODO 2C:
-// 1. Tampilkan pop-up salam pembuka selamat datang menggunakan alert().
-// 2. Tampilkan dialog prompt() untuk meminta nama pengunjung, simpan hasilnya ke variabel "namaPelanggan".
-// 3. Gunakan percabangan "if - else":
-//    - JIKA namaPelanggan ada isinya: tampilkan alert sapaan dan log ke console.
-//    - JIKA namaPelanggan kosong / klik Cancel: beri nilai default "Pelanggan Setia" dan tampilkan alert pemberitahuan.
+alert("Selamat Datang di " + NAMA_KEDAI + "!\nDilayani oleh Kasir: " + namaKasir);
 
+let inputNama = prompt("Silahkan masukkan nama Anda untuk mengecek Point Member:");
+let namaPelanggan;
 
-
+if (inputNama) {
+    namaPelanggan = inputNama;
+    alert(`Halo, ${namaPelanggan}! Sedang mengecek data poinmu...`);
+    console.log(`Pelanggan masuk: ${namaPelanggan}`);
+} else {
+    namaPelanggan = "Pelanggan Setia";
+    alert(`Halo, ${namaPelanggan}! Sedang mengecek data poinmu...`);
+    console.log(`Pelanggan masuk (tanpa nama): ${namaPelanggan}`);
+}
 
 // ============================================================
 // AKTIVITAS 3: Operasi Aritmatika — Akumulasi Poin Transaksi
