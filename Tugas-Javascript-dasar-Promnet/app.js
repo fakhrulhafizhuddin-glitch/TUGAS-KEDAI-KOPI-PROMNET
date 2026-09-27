@@ -171,7 +171,7 @@ console.log("=== MENU REKOMENDASI UNTUK MEMBER ===");
 // TODO 6B:
 // Gunakan perulangan "for loop" untuk mencetak setiap menu ke Console dengan format:
 // "1. Nama Menu", "2. Nama Menu", dst. Gunakan (i + 1) untuk nomor urutnya.for (let i = 0; i < menuRekomendasi.length; i++) {
-    console.log(`${i + 1}. ${menuRekomendasi[i]}`);
+console.log(`${i + 1}. ${menuRekomendasi[i]}`);
 }
 
 // TODO 6C:
